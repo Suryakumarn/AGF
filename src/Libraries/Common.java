@@ -16,6 +16,8 @@ public class Common extends Driver
 			
 			Browser.OpenBrowser("chrome", "http://chatbotui.eu-gb.mybluemix.net/");
 			Result.takescreenshot("check");
+			Browser.testGooglePageTitleInIEBrowser();
+			tearDown();
 		/*	setUp();
 			Browser.testGooglePageTitleInIEBrowser();
 			tearDown();*/
@@ -37,7 +39,7 @@ public class Common extends Driver
 	}
 	
 	public static void testGooglePageTitleInIEBrowser() throws InterruptedException {
-		
+
 		driver.navigate().to("http://chatbotui.eu-gb.mybluemix.net/");
 		driver.get("http://chatbotui.eu-gb.mybluemix.net/");
 		Thread.sleep(1000);

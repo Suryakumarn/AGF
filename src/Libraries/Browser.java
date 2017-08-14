@@ -582,12 +582,11 @@ public class Browser extends Driver
 		
 	}
 
-	public static void testGooglePageTitleInIEBrowser() throws InterruptedException {
+	public static void testGooglePageTitleInIEBrowser() throws InterruptedException, IOException {
 
 		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait((WebDriver) Driver.cDriver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")));
-		if((((WebDriver) Driver.cDriver).findElement(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")).isDisplayed())){
+		WebLink.waittillvisible("sourcelink");
+		if(WebLink.exist("sourcelink")){
 			Result.takescreenshot("Verified");
 			System.out.println("The Links are Displayed");
 		}else{
