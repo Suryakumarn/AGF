@@ -17,7 +17,7 @@ public class Common extends Driver
 			Browser.OpenBrowser("chrome", "http://chatbotui.eu-gb.mybluemix.net/");
 			Result.takescreenshot("check");
 			//setUp();
-			testGooglePageTitleInIEBrowser();
+			Browser.testGooglePageTitleInIEBrowser();
 			tearDown();
 		}
 		catch(Exception e)

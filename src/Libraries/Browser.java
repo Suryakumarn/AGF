@@ -588,10 +588,10 @@ public class Browser extends Driver
 		WebDriverWait wait = new WebDriverWait((WebDriver) Driver.cDriver, 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")));
 		if((((WebDriver) Driver.cDriver).findElement(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")).isDisplayed())){
-			Result.takescreenshot("check");
+			Result.takescreenshot("Verified");
 			System.out.println("The Links are Displayed");
 		}else{
-			Result.takescreenshot("check");
+			Result.takescreenshot("Failed");
 			System.out.println("The Links are not Displayed");
 		}
 	}
