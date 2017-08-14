@@ -15,6 +15,9 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 //import org.openqa.selenium.remote.DesiredCapabilities;
 //import org.openqa.selenium.remote.RemoteWebDriver;
 import Libraries.Driver;
@@ -577,5 +580,19 @@ public class Browser extends Driver
 			Driver.cDriver.get().manage().window().maximize();
 		}
 		
+	}
+
+	public static void testGooglePageTitleInIEBrowser() throws InterruptedException {
+
+		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait((WebDriver) Driver.cDriver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")));
+		if((((WebDriver) Driver.cDriver).findElement(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")).isDisplayed())){
+			Result.takescreenshot("check");
+			System.out.println("The Links are Displayed");
+		}else{
+			Result.takescreenshot("check");
+			System.out.println("The Links are not Displayed");
+		}
 	}
 }

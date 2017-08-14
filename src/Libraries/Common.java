@@ -14,9 +14,9 @@ public class Common extends Driver
 		try
 		{
 			
-			/*Browser.OpenBrowser("chrome", "https://www.google.co.in/");
-			Result.takescreenshot("check");*/
-			setUp();
+			Browser.OpenBrowser("chrome", "http://chatbotui.eu-gb.mybluemix.net/");
+			Result.takescreenshot("check");
+			//setUp();
 			testGooglePageTitleInIEBrowser();
 			tearDown();
 		}
@@ -28,35 +28,34 @@ public class Common extends Driver
 	}	
 	
 //	static String driverPath = "D:\\Chrome_Drivers\\chromedriver2.31\\";
-	//public static RemoteWebDriver driver;
-	public static ThreadLocal<RemoteWebDriver> cDriver = new ThreadLocal<RemoteWebDriver>();
+	public static RemoteWebDriver driver;
 	public static void setUp() {
 		System.out.println("launching Chrome browser");
-		System.setProperty("webdriver.chrome.driver", Driver.basepth.get()+"\\chromedriver.exe");
-		Driver.cDriver.set(new ChromeDriver());
-		((WebDriver) Driver.cDriver).manage().window().maximize();
+		System.setProperty("webdriver.chrome.driver", Driver.basepth.get()+"//chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
 	}
 	
 	public static void testGooglePageTitleInIEBrowser() throws InterruptedException {
 		
-		((WebDriver) Driver.cDriver).navigate().to("http://chatbotui.eu-gb.mybluemix.net/");
-		((WebDriver) Driver.cDriver).get("http://chatbotui.eu-gb.mybluemix.net/");
+		driver.navigate().to("http://chatbotui.eu-gb.mybluemix.net/");
+		driver.get("http://chatbotui.eu-gb.mybluemix.net/");
 		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait((WebDriver) cDriver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")));
-		if((((WebDriver) Driver.cDriver).findElement(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")).isDisplayed())){
+		if((driver.findElement(By.xpath("//a[@target='_blank' and text()='Tour of Heroes']")).isDisplayed()) && 
+				(driver.findElement(By.xpath("//a[@target='_blank' and text()='CLI Documentation']")).isDisplayed()) && 
+				(driver.findElement(By.xpath("//a[@target='_blank' and text()='Angular blog']")).isDisplayed())){
 			System.out.println("The Links are Displayed");
-			Result.takescreenshot("check");
 		}else{
 			System.out.println("The Links are not Displayed");
-			//Result.takescreenshot("check");
 		}
 	}
 
 	public static void tearDown() {
-		if((WebDriver) Driver.cDriver!=null) {
+		if(driver!=null) {
 			System.out.println("Closing Chrome browser");
-			((WebDriver) Driver.cDriver).quit();
+			driver.quit();
 		}
 	}
 	
