@@ -16,9 +16,9 @@ public class Common extends Driver
 			
 			Browser.OpenBrowser("chrome", "http://chatbotui.eu-gb.mybluemix.net/");
 			Result.takescreenshot("check");
-			//setUp();
+		/*	setUp();
 			Browser.testGooglePageTitleInIEBrowser();
-			tearDown();
+			tearDown();*/
 		}
 		catch(Exception e)
 		{
@@ -47,6 +47,7 @@ public class Common extends Driver
 				(driver.findElement(By.xpath("//a[@target='_blank' and text()='CLI Documentation']")).isDisplayed()) && 
 				(driver.findElement(By.xpath("//a[@target='_blank' and text()='Angular blog']")).isDisplayed())){
 			System.out.println("The Links are Displayed");
+			Result.takescreenshot("check");
 		}else{
 			System.out.println("The Links are not Displayed");
 		}

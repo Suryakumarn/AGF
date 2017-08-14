@@ -88,7 +88,7 @@ public class Driver extends RemoteWebDriver
 	public static ThreadLocal<Dictionary> TestData = new ThreadLocal<Dictionary>();
 	public static ThreadLocal<Point> p = new ThreadLocal<Point>();
 	public static ThreadLocal<Dimension> d = new ThreadLocal<Dimension>();
-	
+	//public static RemoteWebDriver driver;
 	/*---------------------------------------------------------------------------------------------------------
 	 * Method Name			: Main Function
 	 * Use 					: The Batch Execution starts from the main function 
