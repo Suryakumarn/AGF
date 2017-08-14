@@ -594,4 +594,11 @@ public class Browser extends Driver
 			System.out.println("The Links are not Displayed");
 		}
 	}
+
+	public static void tearDown() {
+		if(Driver.cDriver!=null) {
+			System.out.println("Closing Chrome browser");
+			cDriver.remove();
+		}
+	}
 }
