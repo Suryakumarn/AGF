@@ -1,25 +1,22 @@
 package Libraries;
+
+import java.net.URL;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-//import org.openqa.selenium.Platform;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.net.MalformedURLException;
-//import java.net.URL;
-
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-//import org.openqa.selenium.remote.DesiredCapabilities;
-//import org.openqa.selenium.remote.RemoteWebDriver;
 import Libraries.Driver;
 import Libraries.KeyWord;
 
@@ -38,6 +35,10 @@ public class Browser extends Driver
 	 * Designed By			: AG
 	 * Last Modified Date 	: 25-Apr-2016
 	--------------------------------------------------------------------------------------------------------*/
+	public static final String USERNAME = "suryakumar9292";
+	public static final String ACCESS_KEY = "f48b92c3-bdb6-48d2-82f6-fd351a190978";
+	public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
+	
 	public static class WebEdit
 	{
 		public static void Set(String objname, String objvalue) throws IOException
@@ -503,13 +504,12 @@ public class Browser extends Driver
 	{
 		if(BrowserName.toLowerCase().equals("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver",Driver.basepth.get()+"/chromedriver.exe");
-			/*DesiredCapabilities dr=null;
-			dr=DesiredCapabilities.chrome();
-			dr.setBrowserName("CHROME");
-			dr.setPlatform(Platform.WINDOWS);
-			Driver.cDriver.set(new RemoteWebDriver(new URL("http://localhost:5555/wd/hub"), dr));*/
-			Driver.cDriver.set(new ChromeDriver());
+			//System.setProperty("webdriver.chrome.driver",Driver.basepth.get()+"/chromedriver.exe");
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability("browserName", "googlechrome");
+			capabilities.setCapability("platform", "Windows 7");
+			capabilities.setCapability("version", "58.0");
+			Driver.cDriver.set(new RemoteWebDriver(new URL(URL),capabilities));
 		}
 		else if(BrowserName.toLowerCase().equals("firefox"))
 		{
