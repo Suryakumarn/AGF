@@ -505,10 +505,10 @@ public class Browser extends Driver
 		if(BrowserName.toLowerCase().equals("chrome"))
 		{
 			//System.setProperty("webdriver.chrome.driver",Driver.basepth.get()+"/chromedriver.exe");
-			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability("browserName", "googlechrome");
+			DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
+			//capabilities.setCapability("browserName", "googlechrome");
 			capabilities.setCapability("platform", "Windows 7");
-			capabilities.setCapability("version", "58.0");
+			capabilities.setCapability("version", "54.0");
 			Driver.cDriver.set(new RemoteWebDriver(new URL(URL),capabilities));
 		}
 		else if(BrowserName.toLowerCase().equals("firefox"))
