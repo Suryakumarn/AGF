@@ -23,6 +23,7 @@ public class Common extends Driver
 		/*	setUp();
 			Browser.testGooglePageTitleInIEBrowser();
 			tearDown();*/
+			
 		}
 		catch(Exception e)
 		{
@@ -32,8 +33,8 @@ public class Common extends Driver
 	}	
 	
 //	static String driverPath = "D:\\Chrome_Drivers\\chromedriver2.31\\";
-	public static RemoteWebDriver driver;
-	public static void setUp() {
+	//public static RemoteWebDriver driver;
+	/*public static void setUp() {
 		System.out.println("launching Chrome browser");
 		System.setProperty("webdriver.chrome.driver", Driver.basepth.get()+"//chromedriver.exe");
 		driver = new ChromeDriver();
@@ -55,14 +56,14 @@ public class Common extends Driver
 		}else{
 			System.out.println("The Links are not Displayed");
 		}
-	}
+	}*/
 
-	public static void tearDown() {
+/*	public static void tearDown() {
 		if(cDriver!=null) {
 			System.out.println("Closing Chrome browser");
 			((WebDriver) cDriver).quit();
 		}
-	}
+	}*/
 	
 	
 }

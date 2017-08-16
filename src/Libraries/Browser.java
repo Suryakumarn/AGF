@@ -506,7 +506,6 @@ public class Browser extends Driver
 		{
 			//System.setProperty("webdriver.chrome.driver",Driver.basepth.get()+"/chromedriver.exe");
 			DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
-			//capabilities.setCapability("browserName", "googlechrome");
 			capabilities.setCapability("platform", "Windows 7");
 			capabilities.setCapability("version", "54.0");
 			Driver.cDriver.set(new RemoteWebDriver(new URL(host),capabilities));
@@ -599,6 +598,8 @@ public class Browser extends Driver
 		if(Driver.cDriver!=null) {
 			System.out.println("Closing Chrome browser");
 			Driver.cDriver.remove();
+			Driver.cDriver.set(null);
 		}
+		//Driver.cDriver.remove();
 	}
 }
