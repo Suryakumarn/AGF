@@ -599,6 +599,7 @@ public class Browser extends Driver
 		if(Driver.cDriver!=null) {
 			System.out.println("Closing Chrome browser");
 			cDriver.remove();
+			((WebDriver) cDriver).quit();
 		}
 	}
 }

@@ -58,9 +58,9 @@ public class Common extends Driver
 	}
 
 	public static void tearDown() {
-		if(driver!=null) {
+		if(cDriver!=null) {
 			System.out.println("Closing Chrome browser");
-			driver.quit();
+			((WebDriver) cDriver).quit();
 		}
 	}
 	
