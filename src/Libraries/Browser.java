@@ -597,8 +597,11 @@ public class Browser extends Driver
 	public static void tearDown() {
 		if(Driver.cDriver!=null) {
 			System.out.println("Closing Chrome browser");
-			Driver.cDriver.remove();
-			Driver.cDriver.set(null);
+		/*	Driver.cDriver.remove();
+			Driver.cDriver.set(null);*/
+			WebDriver closedriver = Driver.cDriver.get();
+			closedriver.quit();
+			System.out.println("Closed");
 		}
 		//Driver.cDriver.remove();
 	}
