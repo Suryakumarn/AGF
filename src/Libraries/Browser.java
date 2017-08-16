@@ -508,6 +508,7 @@ public class Browser extends Driver
 			DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
 			capabilities.setCapability("platform", "Windows 7");
 			capabilities.setCapability("version", "54.0");
+			capabilities.setCapability("name", "Devops Test");
 			Driver.cDriver.set(new RemoteWebDriver(new URL(host),capabilities));
 		}
 		else if(BrowserName.toLowerCase().equals("firefox"))
