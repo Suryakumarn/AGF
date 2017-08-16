@@ -20,6 +20,7 @@ public class Common extends Driver
 			Result.takescreenshot("check");
 			Browser.testGooglePageTitleInIEBrowser();
 			Browser.tearDown();
+			
 		/*	setUp();
 			Browser.testGooglePageTitleInIEBrowser();
 			tearDown();*/
