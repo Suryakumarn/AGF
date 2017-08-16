@@ -37,7 +37,7 @@ public class Browser extends Driver
 	--------------------------------------------------------------------------------------------------------*/
 	public static final String USERNAME = "suryakumar9292";
 	public static final String ACCESS_KEY = "f48b92c3-bdb6-48d2-82f6-fd351a190978";
-	public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
+	public static final String host = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
 	
 	public static class WebEdit
 	{
@@ -509,7 +509,7 @@ public class Browser extends Driver
 			//capabilities.setCapability("browserName", "googlechrome");
 			capabilities.setCapability("platform", "Windows 7");
 			capabilities.setCapability("version", "54.0");
-			Driver.cDriver.set(new RemoteWebDriver(new URL(URL),capabilities));
+			Driver.cDriver.set(new RemoteWebDriver(new URL(host),capabilities));
 		}
 		else if(BrowserName.toLowerCase().equals("firefox"))
 		{
