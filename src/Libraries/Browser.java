@@ -501,7 +501,7 @@ public class Browser extends Driver
 	* Last Modified Date : 15-June-2016
 	--------------------------------------------------------------------------------------------------------*/
 	public static void OpenBrowser(String BrowserName,String URL) throws MalformedURLException
-	{
+	{ 
 		if(BrowserName.toLowerCase().equals("chrome"))
 		{
 			//System.setProperty("webdriver.chrome.driver",Driver.basepth.get()+"/chromedriver.exe"); 
