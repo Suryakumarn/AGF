@@ -504,7 +504,7 @@ public class Browser extends Driver
 	{
 		if(BrowserName.toLowerCase().equals("chrome"))
 		{
-			//System.setProperty("webdriver.chrome.driver",Driver.basepth.get()+"/chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver",Driver.basepth.get()+"/chromedriver.exe"); 
 			DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
 			capabilities.setCapability("platform", "Windows 7");
 			capabilities.setCapability("version", "54.0");
